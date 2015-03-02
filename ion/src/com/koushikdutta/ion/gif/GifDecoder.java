@@ -67,6 +67,7 @@ public class GifDecoder implements Cloneable {
     GifFrame lastFrame;
     GifFrame restoreFrame;
     int[] dest;
+    private int frameNum;
 
     public GifDecoder mutate() {
         try {
@@ -118,6 +119,17 @@ public class GifDecoder implements Cloneable {
         gifDataLength = length;
 
         restart();
+        scanGifFile();
+    }
+
+    private void scanGifFile() {
+        int count = 0;
+        do {
+            nextFrame();
+            count ++;
+        } while(status != STATUS_FINISH);
+        restart();
+        frameNum = count;
     }
 
     public void restart() {
@@ -585,4 +597,8 @@ public class GifDecoder implements Cloneable {
 			readBlock();
 		} while ((blockSize > 0) && !err());
 	}
+
+    public int getFrameNum() {
+        return frameNum;
+    }
 }
