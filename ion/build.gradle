@@ -31,9 +31,9 @@ android {
                 srcDir 'src/'
             }
         }
-        androidTest.java.srcDirs=['test/src/']
-        androidTest.res.srcDirs=['test/res/']
-        androidTest.assets.srcDirs=['test/assets/']
+//        androidTest.java.srcDirs=['test/src/']
+//        androidTest.res.srcDirs=['test/res/']
+//        androidTest.assets.srcDirs=['test/assets/']
     }
 
     lintOptions {
