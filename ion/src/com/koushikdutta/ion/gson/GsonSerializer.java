@@ -59,4 +59,9 @@ public class GsonSerializer<T> implements AsyncParser<T> {
         }
         Util.writeAll(sink, bout.toByteArray(), completed);
     }
+
+    @Override
+    public Type getType() {
+        return type;
+    }
 }

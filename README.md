@@ -53,7 +53,7 @@ The included documented [ion-sample](https://github.com/koush/ion/tree/master/io
 #### More Examples
 
 Looking for more? Check out the examples below that demonstrate some other common scenarios. You can also take a look
-at 30+ ion unit tests in the [ion-test](https://github.com/koush/ion/tree/master/ion-test/src/com/koushikdutta/ion/test).
+at 30+ ion unit tests in the [ion-test](https://github.com/koush/ion/tree/master/ion/test/src/com/koushikdutta/ion/test).
 
 #### Get JSON
 
@@ -105,7 +105,7 @@ Ion.with(getContext())
 .load("https://koush.clockworkmod.com/test/echo")
 .uploadProgressBar(uploadProgressBar)
 .setMultipartParameter("goop", "noop")
-.setMultipartFile("filename.zip", new File("/sdcard/filename.zip"))
+.setMultipartFile("archive", "application/zip", new File("/sdcard/filename.zip"))
 .asJsonObject()
 .setCallback(...)
 ```
@@ -424,3 +424,5 @@ There's hundreds of apps using ion. Feel free to contact me or submit a pull req
 * [PictureCast](https://play.google.com/store/apps/details?id=com.unstableapps.picturecast.app)
 * [Eventius](https://play.google.com/store/apps/details?id=com.eventius.android)
 * [Plume](https://play.google.com/store/apps/details?id=com.levelup.touiteur)
+* [GameRaven](https://play.google.com/store/apps/details?id=com.ioabsoftware.gameraven)
+* [See You There](https://play.google.com/store/apps/details?id=com.maps.wearat&hl=en)

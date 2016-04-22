@@ -14,9 +14,9 @@ import com.koushikdutta.async.parser.AsyncParser;
 import com.koushikdutta.async.parser.ByteBufferListParser;
 import com.koushikdutta.async.parser.StringParser;
 import com.koushikdutta.async.stream.ByteBufferListInputStream;
-import com.koushikdutta.async.util.Charsets;
 
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.nio.charset.Charset;
 
 /**
@@ -63,5 +63,10 @@ public abstract class GsonParser<T extends JsonElement> implements AsyncParser<T
     @Override
     public void write(DataSink sink, T value, CompletedCallback completed) {
         new StringParser().write(sink, value.toString(), completed);
+    }
+
+    @Override
+    public Type getType() {
+        return clazz;
     }
 }

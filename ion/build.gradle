@@ -1,26 +1,19 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.5.0'
-    }
-}
-
 apply plugin: 'com.android.library'
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
+    compile 'com.android.support:palette-v7:+'
     compile 'com.android.support:support-v4:+'
-    compile 'com.koushikdutta.async:androidasync:2.0.8'
+    compile 'com.koushikdutta.async:androidasync:2.+'
     compile 'com.google.code.gson:gson:2.3'
 
     // for when i wanna test this against gms conscrypt
-    androidTestCompile 'com.google.android.gms:play-services:+'
+    androidTestCompile 'com.google.android.gms:play-services-base:+'
+    // mockito nom nom oh god im drunk
+    androidTestCompile "org.mockito:mockito-core:1.+"
+    androidTestCompile "com.google.dexmaker:dexmaker:1.2"
+    androidTestCompile "com.google.dexmaker:dexmaker-mockito:1.2"
 }
+
 
 android {
     sourceSets {
@@ -41,12 +34,12 @@ android {
     }
 
     defaultConfig {
-        targetSdkVersion 21
+        targetSdkVersion 23
         minSdkVersion 9
     }
 
-    compileSdkVersion 21
-    buildToolsVersion '21.1.2'
+    compileSdkVersion 23
+    buildToolsVersion '23.0.1'
 }
 
 // upload to maven task
@@ -62,6 +55,7 @@ if (System.getenv().I_AM_KOUSH == 'true') {
                 mavenDeployer {
                     pom*.whenConfigured { pom ->
                         pom.dependencies.removeAll { dep -> dep.artifactId == 'support-v4' }
+                        pom.dependencies.removeAll { dep -> dep.artifactId == 'palette-v7' }
                     }
                 }
             }

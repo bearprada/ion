@@ -11,6 +11,7 @@ import com.koushikdutta.async.parser.ByteBufferListParser;
 import com.koushikdutta.async.stream.ByteBufferListInputStream;
 
 import java.io.InputStream;
+import java.lang.reflect.Type;
 
 /**
  * Created by koush on 11/3/13.
@@ -30,5 +31,10 @@ class InputStreamParser implements AsyncParser<InputStream> {
     @Override
     public void write(DataSink sink, InputStream value, CompletedCallback completed) {
         throw new AssertionError("not implemented");
+    }
+
+    @Override
+    public Type getType() {
+        return InputStream.class;
     }
 }
