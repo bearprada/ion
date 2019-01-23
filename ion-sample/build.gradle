@@ -18,11 +18,11 @@ android {
     }
 
     defaultConfig {
-        targetSdkVersion 21
-        minSdkVersion 9
+        targetSdkVersion 28
+        minSdkVersion 14
     }
 
-    compileSdkVersion 21
-    buildToolsVersion '21.1.2'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 }
 
