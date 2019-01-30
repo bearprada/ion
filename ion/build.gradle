@@ -1,17 +1,17 @@
 apply plugin: 'com.android.library'
 
 dependencies {
-    compile 'com.android.support:palette-v7:28.0.+'
-    compile 'com.android.support:support-v4:28.0.+'
-    compile 'com.koushikdutta.async:androidasync:2.+'
-    compile 'com.google.code.gson:gson:2.3'
+    implementation 'com.android.support:palette-v7:28.0.+'
+    implementation 'com.android.support:support-v4:28.0.+'
+    api 'com.koushikdutta.async:androidasync:2.+'
+    implementation 'com.google.code.gson:gson:2.3'
 
     // for when i wanna test this against gms conscrypt
-    androidTestCompile 'com.google.android.gms:play-services-base:+'
+    androidTestImplementation 'com.google.android.gms:play-services-base:+'
     // mockito nom nom oh god im drunk
-    androidTestCompile "org.mockito:mockito-core:1.+"
-    androidTestCompile "com.google.dexmaker:dexmaker:1.2"
-    androidTestCompile "com.google.dexmaker:dexmaker-mockito:1.2"
+    androidTestImplementation "org.mockito:mockito-core:1.+"
+    androidTestImplementation "com.google.dexmaker:dexmaker:1.2"
+    androidTestImplementation "com.google.dexmaker:dexmaker-mockito:1.2"
 }
 
 
